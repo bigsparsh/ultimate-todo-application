@@ -19,12 +19,12 @@ const HomePage = () => {
 
 	var aiTimeout;
 	const aiCheck = async () => {
+		setAiText(<i className="fa-solid fa-spinner animate-spin" />);
 		clearTimeout(aiTimeout);
 		aiTimeout = setTimeout(async () => {
-			setAiText("");
 			if (title.current.value.length > 7) {
 				const result = await model.generateContent(
-					`Give some information regarding this todo "${title.current.value}", answer in 3 line text without breaklines, if the todo doesn't make sense then return "Non-sensical Todo" as a reponse`
+					`Make a positive comment about this todo "${title.current.value}", answer in 3 line text only without breaklines`
 				);
 
 				setAiText(result.response.text());

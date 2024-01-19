@@ -1,8 +1,27 @@
+const API_KEY = "AIzaSyByNdIJ2UPr6DKa3UYSbjPf5UJKXbaRy_A";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import { useRef } from "react";
+import { useSetRecoilState } from "recoil";
+import { aiText } from "../atoms";
+const genAI = new GoogleGenerativeAI(API_KEY);
+const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
 const TodoFull = ({ title, desc, assocDate, id, timestamp }) => {
+	const currentTodo = useRef();
+	const aiTextR = useSetRecoilState(aiText);
+	const aiThing = async () => {
+		aiTextR(<i className="fa-solid fa-spinner animate-spin" />);
+
+		const result = await model.generateContent(
+			`Make a positive comment about this todo "${title}", answer in 3 line text only without breaklines`
+		);
+		aiTextR(result.response.text());
+	};
 	return (
 		<div
 			className="w-full flex gap-5 bg-emerald-950/10 rounded-xl items-center focus:ring-4 ring-emerald-950 outline-none"
 			tabIndex="0"
+			onClick={aiThing}
 		>
 			<i className="fa-solid rounded-xl text-5xl fa-check aspect-square grid place-items-center bg-gradient-to-tr from-emerald-900 to-emerald-700 text-emerald-100 h-full" />
 			<div className="text grow px-3 py-3">
