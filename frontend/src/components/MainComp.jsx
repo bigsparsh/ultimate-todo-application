@@ -1,9 +1,12 @@
 import { NavLink, Outlet } from "react-router-dom";
+import { aiText } from "../atoms";
+import { useRecoilValue } from "recoil";
 
 const MainComp = () => {
+	const aiTextR = useRecoilValue(aiText);
 	return (
-		<div className="h-screen gap-5 w-screen flex flex-col font-serif bg-gradient-to-b from-emerald-950 to-emerald-900 py-4 text-emerald-50">
-			<div className=" relative grid place-items-center">
+		<div className="h-screen gap-5 w-screen flex flex-col font-serif bg-gradient-to-b from-emerald-950 to-emerald-900 text-emerald-50">
+			<div className=" relative grid place-items-center mt-10 mb-5">
 				<div className="backline absolute h-5 w-[450px] bg-emerald-50 rounded-full"></div>
 				<div className="text-5xl z-50 w-fit py-5 rounded-3xl px-7 text-emerald-950 bg-emerald-50 relative">
 					<div className="top-left rounded-br-3xl h-7 absolute aspect-square shadow-[7px_7px_0_rgb(236_253_245)] top-[7.5px] left-[-26px]"></div>
@@ -13,7 +16,7 @@ const MainComp = () => {
 					Ultimate Todo
 				</div>
 			</div>
-			<div className=" grow flex gap-5 p-10 ">
+			<div className=" grow flex gap-5 px-10 mb-10">
 				<div className="main-area font-sans tracking-tight font-light p-10 text-4xl gap-3 flex flex-col basis-3/12 ring-1 ring-emerald-700 rounded-xl bg-emerald-900/50 h-full">
 					<NavLink
 						to="/"
@@ -47,8 +50,8 @@ const MainComp = () => {
 						className={({ isActive }) => (isActive ? "italic underline" : null)}
 					>
 						<div className="flex gap-5 items-center justify-start">
-							<i className="fa-solid fa-clipboard text-3xl" />
-							<p>Todo Suggestions</p>
+							<i className="fa-solid fa-magnifying-glass text-3xl" />
+							<p>Todo Search</p>
 						</div>
 					</NavLink>
 				</div>
@@ -56,8 +59,9 @@ const MainComp = () => {
 					<Outlet />
 				</div>
 				<div className="ai-area flex basis-2/12 rounded-xl bg-emerald-50/90 h-fit p-5 text-emerald-950">
-					<div className="text-3xl tracking-tight flex gap-3 items-center">
-						<h1>Gemini Says</h1> <i className="fa-solid fa-star text-xl" />
+					<div className="text-3xl tracking-tight flex flex-col gap-3 justify-center">
+						<h1>Gemini Says</h1>
+						<p className="text-lg font-sans tracking-normal">{aiTextR}</p>
 					</div>
 				</div>
 			</div>

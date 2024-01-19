@@ -16,3 +16,7 @@ export const todos = atomFamily({
 			},
 	}),
 });
+export const aiText = atom({
+	key: "aiTextAtom",
+	default: "",
+});
