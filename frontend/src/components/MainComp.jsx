@@ -14,37 +14,51 @@ const MainComp = () => {
 				</div>
 			</div>
 			<div className=" grow flex gap-5 p-10 ">
-				<div className="main-area p-10 text-4xl gap-3 flex flex-col basis-3/12 ring-1 ring-emerald-700 rounded-xl bg-emerald-900/50 h-full">
+				<div className="main-area font-sans tracking-tight font-light p-10 text-4xl gap-3 flex flex-col basis-3/12 ring-1 ring-emerald-700 rounded-xl bg-emerald-900/50 h-full">
 					<NavLink
 						to="/"
 						className={({ isActive }) => (isActive ? "italic underline" : null)}
 					>
-						Home Page
+						<div className="flex gap-5 items-center justify-start">
+							<i className="fa-solid fa-home text-3xl" />
+							<p>Home Page</p>
+						</div>
 					</NavLink>
 					<NavLink
 						to="/todo-view"
 						className={({ isActive }) => (isActive ? "italic underline" : null)}
 					>
-						View Todos
+						<div className="flex gap-5 items-center justify-start">
+							<i className="fa-solid fa-eye text-3xl" />
+							<p>View Todos</p>
+						</div>
 					</NavLink>
 					<NavLink
 						to="/todo-suggestion"
 						className={({ isActive }) => (isActive ? "italic underline" : null)}
 					>
-						Todo Suggestions
+						<div className="flex gap-5 items-center justify-start">
+							<i className="fa-solid fa-pen text-3xl" />
+							<p>Todo Suggestions</p>
+						</div>
 					</NavLink>
 					<NavLink
 						to="/to"
 						className={({ isActive }) => (isActive ? "italic underline" : null)}
 					>
-						HomePage
+						<div className="flex gap-5 items-center justify-start">
+							<i className="fa-solid fa-clipboard text-3xl" />
+							<p>Todo Suggestions</p>
+						</div>
 					</NavLink>
 				</div>
 				<div className="out-area flex basis-7/12 rounded-xl bg-emerald-50/90 h-full p-5 text-emerald-950">
 					<Outlet />
 				</div>
-				<div className="ai-area flex basis-2/12 rounded-xl bg-emerald-50/90 h-fit">
-					dsf
+				<div className="ai-area flex basis-2/12 rounded-xl bg-emerald-50/90 h-fit p-5 text-emerald-950">
+					<div className="text-3xl tracking-tight flex gap-3 items-center">
+						<h1>Gemini Says</h1> <i className="fa-solid fa-star text-xl" />
+					</div>
 				</div>
 			</div>
 		</div>

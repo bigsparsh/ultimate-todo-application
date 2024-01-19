@@ -15,7 +15,7 @@ router.post("/create", async (req, res) => {
 	const todoSchema = zod.object({
 		title: zod.string(),
 		desc: zod.string(),
-		assocDate: zod.date(),
+		assocDate: zod.string(),
 	});
 	const currentTimeStamp = new Date();
 	if (todoSchema.safeParse(req.body).success) {
@@ -69,7 +69,7 @@ router.post("/update", async (req, res) => {
 	const todoSchema = zod.object({
 		title: zod.string(),
 		desc: zod.string(),
-		assocDate: zod.date(),
+		assocDate: zod.string(),
 	});
 	const todoId = req.query.id;
 	const currentTimeStamp = new Date();

@@ -6,13 +6,13 @@ mongoose.connect(
 const todoSchema = mongoose.Schema({
 	title: String,
 	desc: String,
-	assocDate: Date,
+	assocDate: String,
 	timestamp: Date,
 });
 const eventSchema = mongoose.Schema({
 	name: String,
 	venue: String,
-	assocDate: Date,
+	assocDate: String,
 	timestamp: Date,
 });
 
