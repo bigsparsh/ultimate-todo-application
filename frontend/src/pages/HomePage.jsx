@@ -1,9 +1,5 @@
-import { useRecoilValue } from "recoil";
-import { pageAtom } from "../atoms";
-
 const HomePage = () => {
-	const currentPage = useRecoilValue(pageAtom);
-	return <h1>{currentPage}</h1>;
+	return <div className=""></div>;
 };
 
 export default HomePage;
