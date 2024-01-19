@@ -10,4 +10,6 @@ router.get("/getall", async (req, res) => {
 	});
 });
 
+router.post("/create", async());
+
 module.exports = router;

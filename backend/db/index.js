@@ -6,7 +6,6 @@ mongoose.connect(
 const todoSchema = mongoose.Schema({
 	title: String,
 	desc: String,
-	image: String,
 	assocDate: Date,
 	timestamp: Date,
 });
