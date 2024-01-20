@@ -36,7 +36,7 @@ const MainComp = () => {
 							<p>View Todos</p>
 						</div>
 					</NavLink>
-					<NavLink
+					{/* <NavLink
 						to="/todo-suggestion"
 						className={({ isActive }) => (isActive ? "italic font-bold" : null)}
 					>
@@ -44,7 +44,7 @@ const MainComp = () => {
 							<i className="fa-solid fa-pen text-3xl" />
 							<p>Todo Suggestions</p>
 						</div>
-					</NavLink>
+					</NavLink> */}
 					<NavLink
 						to="/todo-search"
 						className={({ isActive }) => (isActive ? "italic font-bold" : null)}

@@ -12,6 +12,11 @@ const SearchTodos = () => {
 	var timeout;
 	const search = () => {
 		if (todoSearch.current.value.length == 24) {
+			setTodo(
+				<h1 className="px-5 py-3 rounded-xl bg-emerald-950/10 text-emerald-500 text-xl font-bold font-sans grid place-items-center">
+					<i className="fa-solid fa-circle-notch animate-spin" />
+				</h1>
+			);
 			clearTimeout(timeout);
 			timeout = setTimeout(async () => {
 				await axios
