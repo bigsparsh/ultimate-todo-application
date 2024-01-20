@@ -23,7 +23,7 @@ const TodoFull = ({ title, desc, assocDate, id, timestamp, update }) => {
 		update();
 	};
 	return (
-		<div
+		<form
 			className="w-full flex gap-5 bg-emerald-950/10 rounded-xl items-center focus:ring-4 ring-emerald-950 outline-none"
 			tabIndex="0"
 			onFocus={aiThing}
@@ -40,6 +40,7 @@ const TodoFull = ({ title, desc, assocDate, id, timestamp, update }) => {
 			</div>
 			<div className="buttons flex flex-col gap-3 pr-3">
 				<button
+					type="submit"
 					className="text-xl text-white p-2 rounded-lg bg-emerald-800"
 					onClick={deleteTodo}
 				>
@@ -49,7 +50,7 @@ const TodoFull = ({ title, desc, assocDate, id, timestamp, update }) => {
 					<i className="fa-solid fa-pen" />
 				</button>
 			</div>
-		</div>
+		</form>
 	);
 };
 export default TodoFull;

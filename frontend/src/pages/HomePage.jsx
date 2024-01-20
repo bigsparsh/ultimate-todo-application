@@ -44,13 +44,12 @@ const HomePage = () => {
 	};
 
 	return (
-		<div className="w-full">
+		<form className="w-full" onSubmit={createTodo}>
 			<div className="flex text-4xl p-3 justify-between items-center">
 				<h1 className="text-emerald-800">Create Todo</h1>
-				<i
-					onClick={createTodo}
-					className="fa-solid fa-plus py-2 px-3 text-2xl cursor-pointer bg-emerald-900 text-emerald-100 rounded-xl hover:bg-emerald-950"
-				/>
+				<button type="submit">
+					<i className="fa-solid fa-plus py-2 px-3 text-2xl cursor-pointer bg-emerald-900 text-emerald-100 rounded-xl hover:bg-emerald-950" />
+				</button>
 			</div>
 			<div className="form bg-emerald-950/10 rounded-xl flex flex-col gap-2 text-xl px-10 py-5">
 				<label htmlFor="title">Title</label>
@@ -60,6 +59,7 @@ const HomePage = () => {
 					onChange={aiCheck}
 					id="title"
 					className=" rounded-lg px-4 py-1 font-sans bg-emerald-50 ring-1 ring-emerald-200"
+					required
 				/>
 				<label htmlFor="desc">Description</label>
 				<textarea
@@ -68,6 +68,7 @@ const HomePage = () => {
 					rows="5"
 					ref={desc}
 					className=" rounded-lg px-4 py-1 font-sans bg-emerald-50 ring-1 ring-emerald-200"
+					required
 				></textarea>
 				<label htmlFor="assocDate">Asscociated Date:</label>
 				<input
@@ -75,6 +76,7 @@ const HomePage = () => {
 					id="assocDate"
 					ref={assocDate}
 					className=" rounded-lg px-4 py-1 font-sans bg-emerald-50 ring-1 ring-emerald-200"
+					required
 				/>
 			</div>
 			<div className="flex text-4xl p-3 justify-between items-center mt-3">
@@ -99,7 +101,7 @@ const HomePage = () => {
 					) : null
 				)}
 			</div>
-		</div>
+		</form>
 	);
 };
 
