@@ -20,7 +20,7 @@ const MainComp = () => {
 				<div className="main-area font-sans tracking-tight font-light p-10 text-4xl gap-3 flex flex-col basis-3/12 ring-1 ring-emerald-700 rounded-xl bg-emerald-900/50 h-full">
 					<NavLink
 						to="/"
-						className={({ isActive }) => (isActive ? "italic underline" : null)}
+						className={({ isActive }) => (isActive ? "italic font-bold" : null)}
 					>
 						<div className="flex gap-5 items-center justify-start">
 							<i className="fa-solid fa-home text-3xl" />
@@ -29,7 +29,7 @@ const MainComp = () => {
 					</NavLink>
 					<NavLink
 						to="/todo-view"
-						className={({ isActive }) => (isActive ? "italic underline" : null)}
+						className={({ isActive }) => (isActive ? "italic font-bold" : null)}
 					>
 						<div className="flex gap-5 items-center justify-start">
 							<i className="fa-solid fa-eye text-3xl" />
@@ -38,7 +38,7 @@ const MainComp = () => {
 					</NavLink>
 					<NavLink
 						to="/todo-suggestion"
-						className={({ isActive }) => (isActive ? "italic underline" : null)}
+						className={({ isActive }) => (isActive ? "italic font-bold" : null)}
 					>
 						<div className="flex gap-5 items-center justify-start">
 							<i className="fa-solid fa-pen text-3xl" />
@@ -46,8 +46,8 @@ const MainComp = () => {
 						</div>
 					</NavLink>
 					<NavLink
-						to="/to"
-						className={({ isActive }) => (isActive ? "italic underline" : null)}
+						to="/todo-search"
+						className={({ isActive }) => (isActive ? "italic font-bold" : null)}
 					>
 						<div className="flex gap-5 items-center justify-start">
 							<i className="fa-solid fa-magnifying-glass text-3xl" />

@@ -40,15 +40,30 @@ router.post("/create", async (req, res) => {
 
 router.post("/getspecific", async (req, res) => {
 	const todoId = req.query.id;
-	if (todoId) {
-		res.json({
-			todo: await Todo.findById(todoId),
+
+	try {
+		if (todoId) {
+			const todo = await Todo.findById(todoId);
+
+			if (todo) {
+				res.json({
+					todo: todo,
+				});
+			} else {
+				res.status(404).json({
+					error: "TODO NOT FOUND",
+				});
+			}
+		} else {
+			res.status(400).json({
+				error: "TODO ID NOT FOUND IN QUERY",
+			});
+		}
+	} catch (error) {
+		res.status(500).json({
+			error: "BAD TODO ID",
 		});
-		return;
 	}
-	res.status(400).json({
-		error: "TODO ID NOT FOUND IN QUERY",
-	});
 });
 
 router.post("/delete", async (req, res) => {
