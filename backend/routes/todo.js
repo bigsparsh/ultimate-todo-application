@@ -39,11 +39,13 @@ router.post("/create", async (req, res) => {
 });
 
 router.post("/getspecific", async (req, res) => {
-	const todoId = req.query.id;
-
+	const todoFilter = req.query.filter || "";
+	console.log(todoFilter);
 	try {
-		if (todoId) {
-			const todo = await Todo.findById(todoId);
+		if (todoFilter) {
+			const todo = await Todo.find({
+				title: { $regex: todoFilter },
+			});
 
 			if (todo) {
 				res.json({
